@@ -314,10 +314,12 @@ Default Value:
 `
 <?php
 $data = array(
-    'token' => $token,
-    'user_email' => $user->data->user_email,
-    'user_nicename' => $user->data->user_nicename,
-    'user_display_name' => $user->data->display_name,
+      'token' => $token,
+      'user_display_name' => $user->data->display_name,
+      'user_email' => $user->data->user_email,
+      'user_id' => $user->ID,
+      'user_nicename' => $user->data->user_nicename,
+      'user_roles' => $user->roles,
 );
 `
 
@@ -341,12 +343,14 @@ $data = array(
 ###Please read how to configured the plugin https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
 
 == Changelog ==
+= 1.2.7 =
+* Added user ID and roles to reply to authentication request
+
 = 1.2.6 =
 * Cookies && Token compatibility
 * Fix the root problem with gutenberg infinite loops and allow the token validation/generation if the WP cookie exists.
 * More info (https://github.com/Tmeister/wp-api-jwt-auth/pull/138)
 * Props: https://github.com/andrzejpiotrowski
-
 
 = 1.2.5 =
 * Add Gutenberg Compatibility
